@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'destroying restaurants'
+Restaurant.destroy_all
+
+puts 'creating restaurants'
+5.times do
+  Restaurant.create!(
+    name: ['Dishoom', 'hoxton 100', 'pret a manger', 'mcdonalds', 'burger king', 'nandos'].sample,
+    address: ['london', 'shoreditch', 'hackney'].sample
+  )
+end
+puts 'done'
